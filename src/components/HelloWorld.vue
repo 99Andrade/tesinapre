@@ -3,9 +3,7 @@
   <div class="greetings">
 
     <h3>
-  Avance de tesina
-      <a href="#" target="_blank" rel="noopener">Tesina</a> +
-      <a href="#" target="_blank" rel="noopener">Preespecializacion</a>.
+
     </h3>
   </div>
 </template>

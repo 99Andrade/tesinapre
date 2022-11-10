@@ -1,7 +1,11 @@
 <template>
+  <body>  
   <div  class="actualizar">
+    
+    <div class="formulario">   
     <h1 class="Actualizar Clientes">Actualizar Clientes</h1>
-        <form action class="form" @submit.prevent="actualizar">
+        <form action class="form" @submit.prevent="actualizar" method="post">
+          <p>
            <label class="form-label" for="#nombrecliente">Nombre del Cliente:</label>
                 <input
                 v-model="nombrecliente"
@@ -43,9 +47,11 @@
           id="telefono"
           placeholder="Telefono"
         >
+      </p>
         <input class="form-submit" type="submit" value="Actualizar">
       </form>
      </div>
+    </body>  
       </template>
 
 
@@ -76,7 +82,7 @@ export default {
   text-align: center;
 }
 .form {
-  margin: 3rem auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

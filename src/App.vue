@@ -4,38 +4,78 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/images/fondo.jpg" width="700" height="700" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+<header>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/register">Registrar</RouterLink>
-        <RouterLink to="/agregar">Agregar</RouterLink>
-        <RouterLink to="/actualizar">Actualizar Clientes</RouterLink>
-        <RouterLink to="/agregarusuario">Agregar Usuario</RouterLink>
-        <RouterLink to="/actualizarusuario">Actualizar Usuario</RouterLink>
-        
-        
+        <ul>
+          <li><RouterLink to="/">Home</RouterLink></li>
+          <li> <RouterLink to="/register">Registrar</RouterLink></li>
+          <li> <RouterLink to="/agregar">Agregar</RouterLink></li>
+          <li><RouterLink to="/actualizar">Actualizar Clientes</RouterLink></li>
+          <li> <RouterLink to="/agregarusuario">Agregar Usuario</RouterLink></li>
+          <li><RouterLink to="/actualizarusuario">Actualizar Usuario</RouterLink></li>
+        </ul>
       </nav>
+    </header>
+
+   
+    <div class="wrapper">
+     
     </div>
-  </header>
+    <img alt="Vue logo" class="logo" src="@/assets/images/fondo.jpg" width="500" height="500"/>
 
   <RouterView />
+
 </template>
 
 <style scoped>
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  background: rgba(250, 126, 11, 0.9);
+  width: 200%;
+  position: center;
+  z-index:200;
+}
+nav {
+  float:inline-start; /* Desplazamos el nav hacia la izquierda */
 }
 
+nav ul {
+  list-style: none;
+  overflow: hidden; /* Limpiamos errores de float */
+}
+
+nav ul li {
+  float:right;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+nav ul li RouterLink {
+  display: contents; /* Convertimos los elementos a en elementos bloque para manipular el padding */
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  background:transparent;
+}
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 0 auto 5rem;
 }
+.contenido {
+  padding-top: 80px;
+}
+
+
+.wrapper {
+
+ display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+}
+
 
 nav {
   width: 100%;
@@ -44,9 +84,7 @@ nav {
   margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
+
 
 nav a.router-link-exact-active:hover {
   background-color: transparent;
@@ -66,11 +104,11 @@ nav a:first-of-type {
   header {
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    padding-right: calc(var(--section-gap) / 3);
   }
 
   .logo {
-    margin: 0 2rem 0 0;
+    margin: 2 2rem 10 10;
   }
 
   header .wrapper {
@@ -80,12 +118,12 @@ nav a:first-of-type {
   }
 
   nav {
-    text-align: left;
+    text-align: justify;
     margin-left: -1rem;
     font-size: 1rem;
 
-    padding: 1rem 0;
-    margin-top: 1rem;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
   }
 }
 </style>
